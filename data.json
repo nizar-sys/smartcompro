@@ -1,0 +1,77 @@
+{
+  "meta": {
+    "title": "Smartin Teknologi Sistem",
+    "description": "Smartin Technology System is a software development company that provides software solutions to businesses and individuals.",
+    "favicon": "./assets/img/favicon/favicon.ico"
+  },
+
+  "appName": "Smartin Teknologi Sistem",
+  "appLogo": "./assets/appLogo.svg",
+
+  "hero": {
+    "backgrounds": {
+      "light": "./assets/img/front-pages/backgrounds/hero-bg-light.png",
+      "light2": "front-pages/backgrounds/hero-bg-light.png",
+      "dark": "front-pages/backgrounds/hero-bg-dark.png"
+    },
+    "title": "Smartin Teknologi Sistem",
+    "subtitle": "No coding required to make customisations.<br />The live customiser has everything your marketing need.",
+    "sliders": [
+      {
+        "image": "./assets/img/banners/slide3.jpg",
+        "alt": "hero dashboard",
+        "lightImg": "banners/slide3.jpg",
+        "darkImg": "banners/slide3.jpg"
+      },
+      {
+        "image": "./assets/img/banners/slide2.jpg",
+        "alt": "hero dashboard",
+        "lightImg": "banners/slide2.jpg",
+        "darkImg": "banners/slide2.jpg"
+      }
+    ]
+  },
+
+  "service": {
+    "title": "Our Services",
+    "subtitle": "<span class='display-5 fs-4 fw-bold'>Everything you need</span> to start your next project",
+    "description": "Not just a set of tools, the package includes ready-to-deploy conceptual application.",
+    "items": [
+        {
+            "image": "./assets/img/front-pages/icons/laptop-charging.png",
+            "alt": "laptop charging",
+            "title": "Web Development",
+            "description": "Code structure that all developers will easily understand and fall in love with."
+        },
+        {
+            "image": "./assets/img/front-pages/icons/laptop-charging.png",
+            "alt": "laptop charging",
+            "title": "Web Development",
+            "description": "Code structure that all developers will easily understand and fall in love with."
+        }
+    ]
+  },
+
+  "client": {
+    "title": "Our Clients",
+    "subtitle": "<span class='display-5 fs-4 fw-bold'>Success stories</span> from clients",
+    "description": "We have worked with some awesome clients",
+    "items": [
+        {
+            "image": "./assets/img/front-pages/branding/logo-4.png",
+            "alt": "Client Logo",
+            "description":"We have worked with some awesome clients",
+            "name": "Client Name"
+        }
+    ]
+  },
+
+  "statistics": [
+    {
+        "color": "primary",
+        "icon": "ri-layout-line",
+        "data": "100",
+        "description": "Projects Completed"
+    }
+  ]
+}
