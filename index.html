@@ -21,7 +21,7 @@
     <meta name="description" content="{{ meta.description }}" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="{{ meta.favicon }}" />
+    <link rel="icon" type="image/x-icon" :href="meta.favicon" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,830 +80,612 @@
     <script src="./assets/vendor/js/dropdown-hover.js"></script>
     <script src="./assets/vendor/js/mega-dropdown.js"></script>
 
-    <!-- Navbar: Start -->
-    <nav class="layout-navbar container shadow-none py-0">
-      <div
-        class="navbar navbar-expand-lg landing-navbar border-top-0 px-4 px-md-8"
-      >
-        <!-- Menu logo wrapper: Start -->
-        <div class="navbar-brand app-brand demo d-flex py-0 py-lg-2 me-6">
-          <!-- Mobile menu toggle: Start-->
-          <button
-            class="navbar-toggler border-0 px-0 me-2"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="tf-icons ri-menu-fill ri-24px align-middle"></i>
-          </button>
-          <!-- Mobile menu toggle: End-->
-          <a href="./" class="app-brand-link">
-            <span class="app-brand-logo demo"> {{ appLogo }} </span>
-            <span class="app-brand-text demo menu-text fw-semibold ms-2 ps-1"
-              >{{ appName }}</span
-            >
-          </a>
-        </div>
-        <!-- Menu logo wrapper: End -->
-        <!-- Menu wrapper: Start -->
+    <div id="app">
+      <!-- Navbar: Start -->
+      <nav class="layout-navbar container shadow-none py-0">
         <div
-          class="collapse navbar-collapse landing-nav-menu"
-          id="navbarSupportedContent"
+          class="navbar navbar-expand-lg landing-navbar border-top-0 px-4 px-md-8"
         >
-          <button
-            class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 scaleX-n1-rtl"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="tf-icons ri-close-fill"></i>
-          </button>
-          <ul class="navbar-nav me-auto p-4 p-lg-0">
-            <li class="nav-item">
-              <a
-                class="nav-link fw-medium"
-                aria-current="page"
-                href="./#landingHero"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-medium" href="./#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-medium" href="./#landingFAQ">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link fw-medium text-nowrap" href="./#landingContact"
-                >Contact us</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="landing-menu-overlay d-lg-none"></div>
-        <!-- Menu wrapper: End -->
-        <!-- Toolbar: Start -->
-        <ul class="navbar-nav flex-row align-items-center ms-auto">
-          <!-- Style Switcher -->
-          <li class="nav-item dropdown-style-switcher dropdown me-2 me-xl-0">
-            <a
-              class="nav-link btn btn-text-secondary rounded-pill btn-icon dropdown-toggle hide-arrow me-sm-4"
-              href="javascript:void(0);"
-              data-bs-toggle="dropdown"
+          <!-- Menu logo wrapper: Start -->
+          <div class="navbar-brand app-brand demo d-flex py-0 py-lg-2 me-6">
+            <!-- Mobile menu toggle: Start-->
+            <button
+              class="navbar-toggler border-0 px-0 me-2"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
             >
-              <i class="ri-22px text-heading"></i>
+              <i class="tf-icons ri-menu-fill ri-24px align-middle"></i>
+            </button>
+            <!-- Mobile menu toggle: End-->
+            <a href="./" class="app-brand-link">
+              <span class="app-brand-logo demo" v-html="appLogo"></span>
+              <span class="app-brand-text demo menu-text fw-semibold ms-2 ps-1"
+                >{{ appName }}</span
+              >
             </a>
-            <ul class="dropdown-menu dropdown-menu-end dropdown-styles">
-              <li>
+          </div>
+          <!-- Menu logo wrapper: End -->
+          <!-- Menu wrapper: Start -->
+          <div
+            class="collapse navbar-collapse landing-nav-menu"
+            id="navbarSupportedContent"
+          >
+            <button
+              class="navbar-toggler border-0 text-heading position-absolute end-0 top-0 scaleX-n1-rtl"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="tf-icons ri-close-fill"></i>
+            </button>
+            <ul class="navbar-nav me-auto p-4 p-lg-0">
+              <li class="nav-item">
                 <a
-                  class="dropdown-item"
-                  href="javascript:void(0);"
-                  data-theme="light"
+                  class="nav-link fw-medium"
+                  aria-current="page"
+                  href="./#landingHero"
+                  >Home</a
                 >
-                  <span class="align-middle"
-                    ><i class="ri-sun-line ri-22px me-3"></i>Light</span
-                  >
-                </a>
               </li>
-              <li>
-                <a
-                  class="dropdown-item"
-                  href="javascript:void(0);"
-                  data-theme="dark"
-                >
-                  <span class="align-middle"
-                    ><i class="ri-moon-clear-line ri-22px me-3"></i>Dark</span
-                  >
-                </a>
+              <li class="nav-item">
+                <a class="nav-link fw-medium" href="./#services">Services</a>
               </li>
-              <li>
+              <li class="nav-item">
+                <a class="nav-link fw-medium" href="./#landingFAQ">FAQ</a>
+              </li>
+              <li class="nav-item">
                 <a
-                  class="dropdown-item"
-                  href="javascript:void(0);"
-                  data-theme="system"
+                  class="nav-link fw-medium text-nowrap"
+                  href="./#landingContact"
+                  >Contact us</a
                 >
-                  <span class="align-middle"
-                    ><i class="ri-computer-line ri-22px me-3"></i>System</span
-                  >
-                </a>
               </li>
             </ul>
-          </li>
-          <!-- / Style Switcher-->
-        </ul>
-        <!-- Toolbar: End -->
-      </div>
-    </nav>
-    <!-- Navbar: End -->
-
-    <!-- Sections:Start -->
-
-    <div data-bs-spy="scroll" class="scrollspy-example">
-      <!-- Hero: Start -->
-      <section
-        id="landingHero"
-        class="section-py landing-hero position-relative"
-      >
-        <img
-          src="{{ hero.backgrounds.light }}"
-          alt="hero background"
-          class="position-absolute top-0 start-0 w-100 h-100 z-n1"
-          data-speed="1"
-          data-app-light-img="{{ hero.backgrounds.light2 }}"
-          data-app-dark-img="{{ hero.backgrounds.dark }}"
-        />
-        <div class="container">
-          <div class="hero-text-box text-center">
-            <h3 class="text-primary hero-title fs-2">{{ hero.title }}</h3>
-            <h2 class="h6 mb-8">{{ hero.subtitle }}</h2>
           </div>
-          <!-- Swiper Container -->
-          <div class="swiper-container swiper-hero-carousel">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide">
-                <div class="position-relative hero-animation-img">
-                  <a href="javascript:void(0);">
-                    <div class="hero-dashboard-img text-center">
-                      <img
-                        src="./assets/img/banners/slide3.jpg"
-                        alt="hero dashboard"
-                        class="animation-img"
-                        data-speed="2"
-                        data-app-light-img="banners/slide3.jpg"
-                        data-app-dark-img="banners/slide3.jpg"
-                      />
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="position-relative hero-animation-img">
-                  <a href="javascript:void(0);">
-                    <div class="hero-dashboard-img text-center">
-                      <img
-                        src="./assets/img/banners/slide3.jpg"
-                        alt="hero dashboard"
-                        class="animation-img"
-                        data-speed="2"
-                        data-app-light-img="banners/slide3.jpg"
-                        data-app-dark-img="banners/slide3.jpg"
-                      />
-                    </div>
-                  </a>
-                </div>
-              </div>
+          <div class="landing-menu-overlay d-lg-none"></div>
+          <!-- Menu wrapper: End -->
+        </div>
+      </nav>
+      <!-- Navbar: End -->
+
+      <!-- Sections:Start -->
+
+      <div data-bs-spy="scroll" class="scrollspy-example">
+        <!-- Hero: Start -->
+        <section
+          id="landingHero"
+          class="section-py landing-hero position-relative"
+        >
+          <img
+            :src="hero.backgrounds.light"
+            alt="hero background"
+            class="position-absolute top-0 start-0 w-100 h-100 z-n1"
+            data-speed="1"
+            :data-app-light-img="hero.backgrounds.light2"
+            :data-app-dark-img="hero.backgrounds.dark"
+          />
+          <div class="container">
+            <div class="hero-text-box text-center">
+              <h3 class="text-primary hero-title fs-2">{{ hero.title }}</h3>
+              <h2 class="h6 mb-8" v-html="hero.subtitle"></h2>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Hero: End -->
-
-      <!-- Useful features: Start -->
-      <section id="services" class="section-py landing-features">
-        <div class="container">
-          <h6
-            class="text-center d-flex justify-content-center align-items-center mb-6"
-          >
-            <img
-              src="./assets/img/front-pages/icons/section-tilte-icon.png"
-              alt="section title icon"
-              class="me-3"
-            />
-            <span class="text-uppercase">{{ service.title }}</span>
-          </h6>
-          <h5 class="text-center mb-2">{{ service.subtitle }}</h5>
-          <p class="text-center fw-medium mb-4 mb-md-12">
-            {{ service.description }}
-          </p>
-          <div
-            class="features-icon-wrapper row gx-0 gy-12 gx-sm-6 mt-n4 mt-sm-0"
-          >
-            <div class="col-lg-4 col-sm-6 text-center features-icon-box">
-              <div class="features-icon mb-4">
-                <img
-                  src="{{ service.items.image }}"
-                  alt="{{ service.items.alt }}"
-                />
-              </div>
-              <h5 class="mb-2">{{ service.items.title }}</h5>
-              <p class="features-icon-description">
-                {{ service.items.description }}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Useful features: End -->
-
-      <!-- Real customers reviews: Start -->
-      <section id="landingReviews" class="section-py bg-body landing-reviews">
-        <div class="container">
-          <h6
-            class="text-center d-flex justify-content-center align-items-center mb-6"
-          >
-            <img
-              src="./assets/img/front-pages/icons/section-tilte-icon.png"
-              alt="section title icon"
-              class="me-3"
-            />
-            <span class="text-uppercase">{{ client.title }}</span>
-          </h6>
-          <h5 class="text-center mb-2">{{ client.subtitle }}</h5>
-          <p class="text-center fw-medium mb-4 mb-md-12">
-            {{ client.description }}
-          </p>
-        </div>
-        <div class="swiper-reviews-carousel overflow-hidden mb-12 pt-4">
-          <div class="swiper" id="swiper-reviews">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="card h-100">
-                  <div
-                    class="card-body text-body d-flex flex-column justify-content-between text-center p-8"
-                  >
-                    <div class="mb-4">
-                      <img
-                        src="{{ client.items.image }}"
-                        alt="{{ client.items.alt }}"
-                        class="client-logo img-fluid"
-                      />
-                    </div>
-                    <h6>{{ client.items.description }}</h6>
-                    <div>
-                      <h6 class="mb-0">{{ client.items.name }}</h6>
-                    </div>
+            <!-- Swiper Container -->
+            <div class="swiper-container swiper-hero-carousel">
+              <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                  <div class="position-relative hero-animation-img">
+                    <a href="javascript:void(0);">
+                      <div class="hero-dashboard-img text-center">
+                        <img
+                          src="./assets/img/banners/slide3.jpg"
+                          alt="hero dashboard"
+                          class="animation-img"
+                          data-speed="2"
+                          data-app-light-img="banners/slide3.jpg"
+                          data-app-dark-img="banners/slide3.jpg"
+                        />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="position-relative hero-animation-img">
+                    <a href="javascript:void(0);">
+                      <div class="hero-dashboard-img text-center">
+                        <img
+                          src="./assets/img/banners/slide2.jpg"
+                          alt="hero dashboard"
+                          class="animation-img"
+                          data-speed="2"
+                          data-app-light-img="banners/slide2.jpg"
+                          data-app-dark-img="banners/slide2.jpg"
+                        />
+                      </div>
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-pagination"></div>
           </div>
-        </div>
-        <div class="container">
-          <div class="swiper-logo-carousel pt-lg-4 mt-12">
-            <div class="swiper" id="swiper-clients-logos">
+        </section>
+        <!-- Hero: End -->
+
+        <!-- Useful features: Start -->
+        <section id="services" class="section-py landing-features">
+          <div class="container">
+            <h6
+              class="text-center d-flex justify-content-center align-items-center mb-6"
+            >
+              <img
+                src="./assets/img/front-pages/icons/section-tilte-icon.png"
+                alt="section title icon"
+                class="me-3"
+              />
+              <span class="text-uppercase">{{ service.title }}</span>
+            </h6>
+            <h5 class="text-center mb-2" v-html="service.subtitle"></h5>
+            <p class="text-center fw-medium mb-4 mb-md-12">
+              {{ service.description }}
+            </p>
+            <div
+              class="features-icon-wrapper row gx-0 gy-12 gx-sm-6 mt-n4 mt-sm-0"
+            >
+              <div
+                v-for="(item, index) in service.items"
+                :key="index"
+                class="col-lg-4 col-sm-6 text-center features-icon-box"
+              >
+                <div class="features-icon mb-4">
+                  <img :src="item.image" :alt="item.alt" />
+                </div>
+                <h5 class="mb-2">{{ item.title }}</h5>
+                <p class="features-icon-description">{{ item.description }}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Useful features: End -->
+
+        <!-- Real customers reviews: Start -->
+        <section id="landingReviews" class="section-py bg-body landing-reviews">
+          <div class="container">
+            <h6
+              class="text-center d-flex justify-content-center align-items-center mb-6"
+            >
+              <img
+                src="./assets/img/front-pages/icons/section-tilte-icon.png"
+                alt="section title icon"
+                class="me-3"
+              />
+              <span class="text-uppercase">{{ client.title }}</span>
+            </h6>
+            <h5 class="text-center mb-2" v-html="client.subtitle"></h5>
+            <p class="text-center fw-medium mb-4 mb-md-12">
+              {{ client.description }}
+            </p>
+          </div>
+          <!-- <div class="swiper-reviews-carousel overflow-hidden mb-12 pt-4">
+            <div class="swiper" id="swiper-reviews">
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <img
-                    src="{{ client.items.image }}"
-                    alt="{{ client.items.alt }}"
-                    class="client-logo"
-                    data-app-light-img="{{ client.items.image }}"
-                    data-app-dark-img="{{ client.items.image }}"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Real customers reviews: End -->
-
-      <!-- Fun facts: Start -->
-      <section
-        id="landingFunFacts"
-        class="section-py landing-fun-facts py-12 my-4"
-      >
-        <div class="container">
-          <div class="row gx-0 gy-6 gx-sm-6">
-            <div class="col-md-3 col-sm-6 text-center">
-              <span
-                class="badge rounded-pill bg-label-hover-{{ statistic.color }} fun-facts-icon mb-6 p-5"
-                ><i class="tf-icons {{ statistic.icon }} ri-42px"></i
-              ></span>
-              <h2 class="fw-bold mb-0 fun-facts-text">{{ statistic.data }}</h2>
-              <h6 class="mb-0 text-body">{{ statistic.description }}</h6>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- Fun facts: End -->
-
-      <!-- FAQ: Start -->
-      <section id="landingFAQ" class="section-py bg-body landing-faq">
-        <div class="container bg-icon-right">
-          <img
-            src="./assets/img/front-pages/icons/bg-right-icon-light.png"
-            alt="section icon"
-            class="position-absolute top-0 end-0"
-            data-speed="1"
-            data-app-light-img="front-pages/icons/bg-right-icon-light.png"
-            data-app-dark-img="front-pages/icons/bg-right-icon-dark.png"
-          />
-          <h6
-            class="text-center d-flex justify-content-center align-items-center mb-6"
-          >
-            <img
-              src="./assets/img/front-pages/icons/section-tilte-icon.png"
-              alt="section title icon"
-              class="me-3"
-            />
-            <span class="text-uppercase">faq</span>
-          </h6>
-          <h5 class="text-center mb-2">
-            Frequently asked<span class="display-5 fs-4 fw-bold">
-              questions</span
-            >
-          </h5>
-          <p class="text-center fw-medium mb-4 mb-md-12 pb-4">
-            Browse through these FAQs to find answers to commonly asked
-            questions.
-          </p>
-          <div class="row gy-5">
-            <div class="col-lg-5">
-              <div class="text-center">
-                <img
-                  src="./assets/img/front-pages/landing-page/sitting-girl-with-laptop.png
-          "
-                  alt="sitting girl with laptop"
-                  class="faq-image scaleX-n1-rtl"
-                />
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="accordion" id="accordionFront">
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="head-One">
-                    <button
-                      type="button"
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#accordionOne"
-                      aria-expanded="true"
-                      aria-controls="accordionOne"
+                  <div class="card h-100">
+                    <div
+                      class="card-body text-body d-flex flex-column justify-content-between text-center p-8"
                     >
-                      Do you charge for each upgrade?
-                    </button>
-                  </h2>
-
-                  <div
-                    id="accordionOne"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionFront"
-                    aria-labelledby="accordionOne"
-                  >
-                    <div class="accordion-body">
-                      Lemon drops chocolate cake gummies carrot cake chupa chups
-                      muffin topping. Sesame snaps icing marzipan gummi bears
-                      macaroon dragée danish caramels powder. Bear claw dragée
-                      pastry topping soufflé. Wafer gummi bears marshmallow
-                      pastry pie.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item previous-active">
-                  <h2 class="accordion-header" id="head-Two">
-                    <button
-                      type="button"
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#accordionTwo"
-                      aria-expanded="false"
-                      aria-controls="accordionTwo"
-                    >
-                      Do I need to purchase a license for each website?
-                    </button>
-                  </h2>
-                  <div
-                    id="accordionTwo"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="accordionTwo"
-                    data-bs-parent="#accordionFront"
-                  >
-                    <div class="accordion-body">
-                      Dessert ice cream donut oat cake jelly-o pie sugar plum
-                      cheesecake. Bear claw dragée oat cake dragée ice cream
-                      halvah tootsie roll. Danish cake oat cake pie macaroon
-                      tart donut gummies. Jelly beans candy canes carrot cake.
-                      Fruitcake chocolate chupa chups.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item active">
-                  <h2 class="accordion-header" id="head-Three">
-                    <button
-                      type="button"
-                      class="accordion-button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#accordionThree"
-                      aria-expanded="true"
-                      aria-controls="accordionThree"
-                    >
-                      What is regular license?
-                    </button>
-                  </h2>
-                  <div
-                    id="accordionThree"
-                    class="accordion-collapse collapse show"
-                    aria-labelledby="accordionThree"
-                    data-bs-parent="#accordionFront"
-                  >
-                    <div class="accordion-body">
-                      Regular license can be used for end products that do not
-                      charge users for access or service(access is free and
-                      there will be no monthly subscription fee). Single regular
-                      license can be used for single end product and end product
-                      can be used by you or your client. If you want to sell end
-                      product to multiple clients then you will need to purchase
-                      separate license for each client. The same rule applies if
-                      you want to use the same end product on multiple
-                      domains(unique setup). For more info on regular license
-                      you can check official description.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="head-Four">
-                    <button
-                      type="button"
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#accordionFour"
-                      aria-expanded="false"
-                      aria-controls="accordionFour"
-                    >
-                      What is extended license?
-                    </button>
-                  </h2>
-                  <div
-                    id="accordionFour"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="accordionFour"
-                    data-bs-parent="#accordionFront"
-                  >
-                    <div class="accordion-body">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Nobis et aliquid quaerat possimus maxime! Mollitia
-                      reprehenderit neque repellat deleniti delectus architecto
-                      dolorum maxime, blanditiis earum ea, incidunt quam
-                      possimus cumque.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header" id="head-Five">
-                    <button
-                      type="button"
-                      class="accordion-button collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#accordionFive"
-                      aria-expanded="false"
-                      aria-controls="accordionFive"
-                    >
-                      Which license is applicable for SASS application?
-                    </button>
-                  </h2>
-                  <div
-                    id="accordionFive"
-                    class="accordion-collapse collapse"
-                    aria-labelledby="accordionFive"
-                    data-bs-parent="#accordionFront"
-                  >
-                    <div class="accordion-body">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Sequi molestias exercitationem ab cum nemo facere
-                      voluptates veritatis quia, eveniet veniam at et
-                      repudiandae mollitia ipsam quasi labore enim architecto
-                      non!
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- FAQ: End -->
-
-      <!-- CTA: Start -->
-      <section
-        id="landingCTA"
-        class="section-py landing-cta p-lg-0 pb-0 position-relative"
-      >
-        <img
-          src="./assets/img/front-pages/backgrounds/cta-bg.png"
-          class="position-absolute bottom-0 end-0 scaleX-n1-rtl h-100 w-100 z-n1"
-          alt="cta image"
-        />
-        <div class="container">
-          <div class="row align-items-center gy-5 gy-lg-0">
-            <div class="col-lg-6 text-center text-lg-start">
-              <h3 class="display-5 text-primary fw-bold mb-1 h3">
-                Ready to Get Started?
-              </h3>
-              <p class="fw-medium mb-6 mb-md-8">
-                Start your project with a 14-day free trial
-              </p>
-              <a href="payment-page.html" class="btn btn-primary"
-                >Get Started<i
-                  class="ri-arrow-right-line ri-16px ms-2 scaleX-n1-rtl"
-                ></i
-              ></a>
-            </div>
-            <div class="col-lg-6 pt-lg-12">
-              <img
-                src="./assets/img/front-pages/landing-page/cta-dashboard.png"
-                alt="cta dashboard"
-                class="img-fluid"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- CTA: End -->
-
-      <!-- Contact Us: Start -->
-      <section id="landingContact" class="section-py bg-body landing-contact">
-        <div class="container bg-icon-left position-relative">
-          <img
-            src="./assets/img/front-pages/icons/bg-left-icon-light.png"
-            alt="section icon"
-            class="position-absolute top-0 start-0"
-            data-speed="1"
-            data-app-light-img="front-pages/icons/bg-left-icon-light.png"
-            data-app-dark-img="front-pages/icons/bg-left-icon-dark.png"
-          />
-          <h6
-            class="text-center d-flex justify-content-center align-items-center mb-6"
-          >
-            <img
-              src="./assets/img/front-pages/icons/section-tilte-icon.png"
-              alt="section title icon"
-              class="me-3"
-            />
-            <span class="text-uppercase">contact us</span>
-          </h6>
-          <h5 class="text-center mb-2">
-            <span class="display-5 fs-4 fw-bold">Lets work</span> together
-          </h5>
-          <p class="text-center fw-medium mb-4 mb-md-12 pb-3">
-            Any question or remark? just write us a message
-          </p>
-          <div class="row gy-6">
-            <div class="col-lg-5">
-              <div class="card h-100">
-                <div class="bg-primary rounded-4 text-white card-body p-8">
-                  <p class="fw-medium mb-1_5 tagline">Let’s contact with us</p>
-                  <h4 class="text-white mb-5 title">
-                    Share your ideas or requirement with our experts.
-                  </h4>
-                  <img
-                    src="./assets/img/front-pages/landing-page/let’s-contact.png
-              "
-                    alt="let’s contact"
-                    class="w-100 mb-5"
-                  />
-                  <p class="mb-0 description">
-                    Looking for more customisation, more features, and more
-                    anything? Don’t worry, We’ve provide you with an entire team
-                    of experienced professionals.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-7">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="mb-6">Share your ideas</h5>
-                  <form>
-                    <div class="row g-5">
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <input
-                            type="text"
-                            class="form-control"
-                            id="basic-default-fullname"
-                            placeholder="John Doe"
-                          />
-                          <label for="basic-default-fullname">Full name</label>
-                        </div>
+                      <div class="mb-4">
+                        <img
+                          :src="client.items[0].image"
+                          :alt="client.items[0].alt"
+                          class="client-logo img-fluid"
+                        />
                       </div>
-
-                      <div class="col-md-6">
-                        <div class="form-floating form-floating-outline">
-                          <input
-                            type="email"
-                            class="form-control"
-                            id="basic-default-email"
-                            placeholder="johndoe99@gmail.com"
-                          />
-                          <label for="basic-default-email">Email address</label>
-                        </div>
-                      </div>
-
-                      <div class="col-12">
-                        <div class="form-floating form-floating-outline">
-                          <textarea
-                            class="form-control h-px-250"
-                            placeholder="Message"
-                            aria-label="Message"
-                            id="basic-default-message"
-                          ></textarea>
-                          <label for="basic-default-message">Message</label>
-                        </div>
+                      <h6>{{ client.items.description }}</h6>
+                      <div>
+                        <h6 class="mb-0">{{ client.items.name }}</h6>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary mt-5">
-                      Send inquiry
-                    </button>
-                  </form>
+                  </div>
                 </div>
               </div>
+              <div class="swiper-pagination"></div>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- Contact Us: End -->
-    </div>
-
-    <!-- / Sections:End -->
-
-    <!-- Footer: Start -->
-    <footer class="landing-footer">
-      <div class="footer-top position-relative overflow-hidden">
-        <img
-          src="./assets/img/front-pages/backgrounds/footer-bg.png"
-          alt="footer bg"
-          class="footer-bg banner-bg-img"
-        />
-        <div class="container position-relative">
-          <div class="row gx-0 gy-7 gx-sm-6 gx-lg-12">
-            <div class="col-lg-5">
-              <a href="./" class="app-brand-link mb-6">
-                <span class="app-brand-logo demo me-2"> {{ appLogo }} </span>
-                <span class="app-brand-text demo footer-link fw-semibold ms-1"
-                  >{{ appName }}</span
-                >
-              </a>
-              <p class="footer-text footer-logo-description mb-6">
-                Most Powerful & Comprehensive 🤩 React NextJS Admin Template
-                with Elegant Material Design & Unique Layouts.
-              </p>
-              <form>
-                <div class="d-flex mt-2 gap-4">
-                  <div class="form-floating form-floating-outline w-px-250">
-                    <input
-                      type="text"
-                      class="form-control bg-transparent"
-                      id="newsletter-1"
-                      placeholder="Your email"
+          <div class="container">
+            <div class="swiper-logo-carousel pt-lg-4 mt-12">
+              <div class="swiper" id="swiper-clients-logos">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      :src="client.items[0].image"
+                      :alt="client.items[0].alt"
+                      class="client-logo"
+                      :data-app-light-img="client.items.image"
+                      :data-app-dark-img="client.items.image"
                     />
-                    <label for="newsletter-1">Subscribe to newsletter</label>
                   </div>
-                  <button type="submit" class="btn btn-primary">
-                    Subscribe
-                  </button>
                 </div>
-              </form>
+              </div>
             </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <h6 class="footer-title mb-4 mb-lg-6">Demos</h6>
-              <ul class="list-unstyled mb-0">
-                <li class="mb-4">
-                  <a
-                    href="../vertical-menu-template/"
-                    target="_blank"
-                    class="footer-link"
-                    >Vertical Layout</a
-                  >
-                </li>
-                <li class="mb-4">
-                  <a
-                    href="../horizontal-menu-template/"
-                    target="_blank"
-                    class="footer-link"
-                    >Horizontal Layout</a
-                  >
-                </li>
-                <li class="mb-4">
-                  <a
-                    href="../vertical-menu-template-bordered/"
-                    target="_blank"
-                    class="footer-link"
-                    >Bordered Layout</a
-                  >
-                </li>
-                <li class="mb-4">
-                  <a
-                    href="../vertical-menu-template-semi-dark/"
-                    target="_blank"
-                    class="footer-link"
-                    >Semi Dark Layout</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="../vertical-menu-template-dark/"
-                    target="_blank"
-                    class="footer-link"
-                    >Dark Layout</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-2 col-md-4 col-sm-6">
-              <h6 class="footer-title mb-4 mb-lg-6">Pages</h6>
-              <ul class="list-unstyled mb-0">
-                <li class="mb-4">
-                  <a href="pricing-page.html" class="footer-link">Pricing</a>
-                </li>
-                <li class="mb-4">
-                  <a href="payment-page.html" class="footer-link"
-                    >Payment<span class="badge rounded-pill bg-primary ms-2"
-                      >New</span
-                    ></a
-                  >
-                </li>
-                <li class="mb-4">
-                  <a href="checkout-page.html" class="footer-link">Checkout</a>
-                </li>
-                <li class="mb-4">
-                  <a href="help-center-landing.html" class="footer-link"
-                    >Help Center</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="../vertical-menu-template/auth-login-cover.html"
-                    target="_blank"
-                    class="footer-link"
-                    >Login/Register</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-4">
-              <h6 class="footer-title mb-4 mb-lg-6">Download our app</h6>
-              <a href="javascript:void(0);" class="d-block footer-link mb-4"
-                ><img
-                  src="./assets/img/front-pages/landing-page/apple-icon.png"
-                  alt="apple icon"
-              /></a>
-              <a href="javascript:void(0);" class="d-block footer-link"
-                ><img
-                  src="./assets/img/front-pages/landing-page/google-play-icon.png"
-                  alt="google play icon"
-              /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom py-5">
-        <div
-          class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start"
+          </div> -->
+        </section>
+        <!-- Real customers reviews: End -->
+
+        <!-- Fun facts: Start -->
+        <section
+          id="landingFunFacts"
+          class="section-py landing-fun-facts py-12 my-4"
         >
-          <div class="mb-2 mb-md-0">
-            <span class="footer-text"
-              >©
-              <script>
-                document.write(new Date().getFullYear());
-              </script>
-              , Made with <i class="tf-icons ri-heart-fill text-danger"></i> by
-            </span>
-            <a
-              href="https://pixinvent.com"
-              target="_blank"
-              class="footer-link fw-medium footer-theme-link"
-              >Pixinvent</a
-            >
+          <div class="container">
+            <div class="row gx-0 gy-6 gx-sm-6">
+              <div
+                v-for="(stat, index) in statistics"
+                :key="index"
+                class="col-md-3 col-sm-6 text-center"
+              >
+                <span
+                  :class="'badge rounded-pill bg-label-hover-'+stat.color+' fun-facts-icon mb-2 p-5'"
+                >
+                  <i :class="'tf-icons '+ stat.icon +' ri-42px'"></i>
+                </span>
+                <h2 class="fw-bold mb-0 fun-facts-text">{{ stat.data }}</h2>
+                <h6 class="mb-0 text-body">{{ stat.description }}</h6>
+              </div>
+            </div>
           </div>
-          <div>
-            <a
-              href="https://github.com/pixinvent"
-              class="footer-link me-4"
-              target="_blank"
-              ><i class="ri-github-fill"></i
-            ></a>
-            <a
-              href="https://www.facebook.com/pixinvents/"
-              class="footer-link me-4"
-              target="_blank"
-              ><i class="ri-facebook-circle-fill"></i
-            ></a>
-            <a
-              href="https://twitter.com/pixinvents"
-              class="footer-link me-4"
-              target="_blank"
-              ><i class="ri-twitter-fill"></i
-            ></a>
-            <a
-              href="https://www.instagram.com/pixinvents/"
-              class="footer-link"
-              target="_blank"
-              ><i class="ri-instagram-line"></i
-            ></a>
+        </section>
+        <!-- Fun facts: End -->
+
+        <!-- FAQ: Start -->
+        <section id="landingFAQ" class="section-py bg-body landing-faq">
+          <div class="container bg-icon-right">
+            <img
+              src="./assets/img/front-pages/icons/bg-right-icon-light.png"
+              alt="section icon"
+              class="position-absolute top-0 end-0"
+              data-speed="1"
+              data-app-light-img="front-pages/icons/bg-right-icon-light.png"
+              data-app-dark-img="front-pages/icons/bg-right-icon-dark.png"
+            />
+            <h6
+              class="text-center d-flex justify-content-center align-items-center mb-6"
+            >
+              <img
+                src="./assets/img/front-pages/icons/section-tilte-icon.png"
+                alt="section title icon"
+                class="me-3"
+              />
+              <span class="text-uppercase">{{ faq.title }}</span>
+            </h6>
+            <h5 class="text-center mb-2" v-html="faq.subtitle"></h5>
+            <p class="text-center fw-medium mb-4 mb-md-12 pb-4">
+              {{faq.description}}
+            </p>
+            <div class="row gy-5">
+              <div class="col-lg-5">
+                <div class="text-center">
+                  <img
+                    :src="faq.image"
+                    :alt="faq.alt"
+                    class="faq-image scaleX-n1-rtl"
+                  />
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="accordion" id="accordionFront">
+                  <div
+                    class="accordion-item"
+                    v-for="(item, index) in faq.items"
+                    :key="index"
+                  >
+                    <h2 class="accordion-header" :id="'head-' + index">
+                      <button
+                        type="button"
+                        class="accordion-button collapsed"
+                        :data-bs-toggle="'collapse'"
+                        :data-bs-target="'#accordion' + index"
+                        :aria-expanded="index === 0 ? 'true' : 'false'"
+                        :aria-controls="'accordion' + index"
+                      >
+                        {{ item.question }}
+                      </button>
+                    </h2>
+
+                    <div
+                      :id="'accordion' + index"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFront"
+                      :aria-labelledby="'head-' + index"
+                    >
+                      <div class="accordion-body">{{ item.answer }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FAQ: End -->
+
+        <!-- CTA: Start -->
+        <section
+          id="landingCTA"
+          class="section-py landing-cta p-lg-0 pb-0 position-relative"
+        >
+          <img
+            src="./assets/img/front-pages/backgrounds/cta-bg.png"
+            class="position-absolute bottom-0 end-0 scaleX-n1-rtl h-100 w-100 z-n1"
+            alt="cta image"
+          />
+          <div class="container">
+            <div class="row align-items-center gy-5 gy-lg-0">
+              <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="display-5 text-primary fw-bold mb-1 h3">
+                  {{about.title}}
+                </h3>
+                <p
+                  class="fw-medium mb-6 mb-md-8"
+                  v-html="about.description"
+                ></p>
+              </div>
+              <div class="col-lg-6 pt-lg-12">
+                <img :src="about.image" :alt="about.alt" class="img-fluid" />
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- CTA: End -->
+
+        <!-- Contact Us: Start -->
+        <section id="landingContact" class="section-py bg-body landing-contact">
+          <div class="container bg-icon-left position-relative">
+            <img
+              src="./assets/img/front-pages/icons/bg-left-icon-light.png"
+              alt="section icon"
+              class="position-absolute top-0 start-0"
+              data-speed="1"
+              data-app-light-img="front-pages/icons/bg-left-icon-light.png"
+              data-app-dark-img="front-pages/icons/bg-left-icon-dark.png"
+            />
+            <h6
+              class="text-center d-flex justify-content-center align-items-center mb-6"
+            >
+              <img
+                src="./assets/img/front-pages/icons/section-tilte-icon.png"
+                alt="section title icon"
+                class="me-3"
+              />
+              <span class="text-uppercase">{{contact_us.title}}</span>
+            </h6>
+            <h5 class="text-center mb-2" v-html="contact_us.subtitle"></h5>
+            <p class="text-center fw-medium mb-4 mb-md-12 pb-3">
+              {{contact_us.description}}
+            </p>
+            <div class="row gy-6">
+              <div class="col-lg-5">
+                <div class="card h-100">
+                  <div class="bg-primary rounded-4 text-white card-body p-8">
+                    <p class="fw-medium mb-1_5 tagline">
+                      Let’s contact with us
+                    </p>
+                    <h4 class="text-white mb-5 title">
+                      Share your ideas or requirement with our experts.
+                    </h4>
+                    <img
+                      src="./assets/img/front-pages/landing-page/let’s-contact.png
+                "
+                      alt="let’s contact"
+                      class="w-100 mb-5"
+                    />
+                    <p class="mb-0 description">
+                      Looking for more customisation, more features, and more
+                      anything? Don’t worry, We’ve provide you with an entire
+                      team of experienced professionals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="mb-6">Share your ideas</h5>
+                    <form>
+                      <div class="row g-5">
+                        <div class="col-md-6">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="basic-default-fullname"
+                              placeholder="John Doe"
+                            />
+                            <label for="basic-default-fullname"
+                              >Full name</label
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-floating form-floating-outline">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="basic-default-email"
+                              placeholder="johndoe99@gmail.com"
+                            />
+                            <label for="basic-default-email"
+                              >Email address</label
+                            >
+                          </div>
+                        </div>
+
+                        <div class="col-12">
+                          <div class="form-floating form-floating-outline">
+                            <textarea
+                              class="form-control h-px-250"
+                              placeholder="Message"
+                              aria-label="Message"
+                              id="basic-default-message"
+                            ></textarea>
+                            <label for="basic-default-message">Message</label>
+                          </div>
+                        </div>
+                      </div>
+                      <button type="submit" class="btn btn-primary mt-5">
+                        Send inquiry
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Contact Us: End -->
+      </div>
+
+      <!-- / Sections:End -->
+
+      <!-- Footer: Start -->
+      <footer class="landing-footer">
+        <div class="footer-top position-relative overflow-hidden">
+          <img
+            src="./assets/img/front-pages/backgrounds/footer-bg.png"
+            alt="footer bg"
+            class="footer-bg banner-bg-img"
+          />
+          <div class="container position-relative">
+            <div class="row gx-0 gy-7 gx-sm-6 gx-lg-12">
+              <div class="col-lg-5">
+                <a href="./" class="app-brand-link mb-6">
+                  <span class="app-brand-logo demo me-2" v-html="appLogo"></span>
+                  <span class="app-brand-text demo footer-link fw-semibold ms-1"
+                    >{{ appName }}</span
+                  >
+                </a>
+                <p class="footer-text footer-logo-description mb-6">
+                  {{footer.description}}
+                </p>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <h6 class="footer-title mb-4 mb-lg-6">{{appName}}</h6>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-4">
+                    <a href="./#landingHero" target="_blank" class="footer-link"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="mb-4">
+                    <a href="./#services" target="_blank" class="footer-link"
+                      >Services</a
+                    >
+                  </li>
+                  <li class="mb-4">
+                    <a href="./#landingFAQ" target="_blank" class="footer-link"
+                      >FAQ</a
+                    >
+                  </li>
+                  <li class="mb-4">
+                    <a
+                      href="./#landingContact"
+                      target="_blank"
+                      class="footer-link"
+                      >Contact us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="d-none">
+                  <h6 class="footer-title mb-4 mb-lg-6">Pages</h6>
+                  <ul class="list-unstyled mb-0">
+                    <li class="mb-4">
+                      <a href="pricing-page.html" class="footer-link"
+                        >Pricing</a
+                      >
+                    </li>
+                    <li class="mb-4">
+                      <a href="payment-page.html" class="footer-link"
+                        >Payment<span class="badge rounded-pill bg-primary ms-2"
+                          >New</span
+                        ></a
+                      >
+                    </li>
+                    <li class="mb-4">
+                      <a href="checkout-page.html" class="footer-link"
+                        >Checkout</a
+                      >
+                    </li>
+                    <li class="mb-4">
+                      <a href="help-center-landing.html" class="footer-link"
+                        >Help Center</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        href="../vertical-menu-template/auth-login-cover.html"
+                        target="_blank"
+                        class="footer-link"
+                        >Login/Register</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-4">
+                <h6 class="footer-title mb-4 mb-lg-6">Download our app</h6>
+                <a :href="footer.url_appstore" class="d-block footer-link mb-4"
+                  ><img
+                    src="./assets/img/front-pages/landing-page/apple-icon.png"
+                    alt="apple icon"
+                /></a>
+                <a :href="footer.url_appstore" class="d-block footer-link"
+                  ><img
+                    src="./assets/img/front-pages/landing-page/google-play-icon.png"
+                    alt="google play icon"
+                /></a>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-    <!-- Footer: End -->
+        <div class="footer-bottom py-5">
+          <div
+            class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start"
+          >
+            <div class="mb-2 mb-md-0">
+              <span class="footer-text">{{footer.copyright.text}}</span>,
+              <a
+                href="./"
+                target="_blank"
+                class="footer-link fw-medium footer-theme-link"
+                >{{appName}}</a
+              >
+            </div>
+            <div>
+              <div>
+                <a
+                  v-for="(social, index) in footer.socials"
+                  :key="index"
+                  :href="social.url"
+                  class="footer-link me-4"
+                  target="_blank"
+                >
+                  <i :class="social.icon"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- Footer: End -->
+    </div>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -923,22 +705,8 @@
     <!-- Page JS -->
     <script src="./assets/js/front-page-landing.js"></script>
 
-    <script>
-      var swiper = new Swiper(".swiper-hero-carousel", {
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        speed: 1000, // Speed for slide transitions
-        autoplay: {
-          delay: 3000, // Autoplay delay (ms)
-        },
-      });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
