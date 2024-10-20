@@ -241,13 +241,13 @@
               <div
                 v-for="(item, index) in service.items"
                 :key="index"
-                class="col-lg-4 col-sm-6 text-center features-icon-box"
+                class="col-lg-3 col-sm-6 text-center features-icon-box"
               >
-                <div class="features-icon mb-4">
-                  <img :src="item.image" :alt="item.alt" />
+                <div class="features-icon mb-4 border-0">
+                  <img :src="item.image" :alt="item.alt" class="img-fluid"/>
                 </div>
                 <h5 class="mb-2">{{ item.title }}</h5>
-                <p class="features-icon-description">{{ item.description }}</p>
+                <p class="features-icon-description" v-html="item.description"></p>
               </div>
             </div>
           </div>

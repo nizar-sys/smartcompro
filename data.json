@@ -35,19 +35,55 @@
   "service": {
     "title": "Our Services",
     "subtitle": "<span class='display-5 fs-4 fw-bold'>Everything you need</span> to start your next project",
-    "description": "Not just a set of tools, the package includes ready-to-deploy conceptual application.",
+    "description": "",
     "items": [
       {
-        "image": "/assets/img/front-pages/icons/laptop-charging.png",
-        "alt": "laptop charging",
-        "title": "Web Development",
-        "description": "Code structure that all developers will easily understand and fall in love with."
+        "image": "/assets/img/services/24-7-mt-support.png",
+        "alt": "24/7 Metatrader Support",
+        "title": "24/7 Metatrader Support",
+        "description": "<p><ul class='text-start'><li>MT4 Installations</li><li>MT4 Administration & Configuration</li><li>MT4 Data Migration</li><li>MT4 Servers Support</li><li>Data Feeds Setup and Configuration</li><li>Monitoring</li><li>24/5 technical Support</li><li>English Support</li></ul></p>"
+      },      
+      {
+        "image": "/assets/img/services/news-research.png",
+        "alt": "News Research",
+        "title": "News Research",
+        "description": "<p>Learn how global markets work, how they are interrelated, and how individual companies and sectors can influence their movements.</p>"
       },
       {
-        "image": "/assets/img/front-pages/icons/laptop-charging.png",
-        "alt": "laptop charging",
-        "title": "Web Development",
-        "description": "Code structure that all developers will easily understand and fall in love with."
+        "image": "/assets/img/services/erp-solution.png",
+        "alt": "ERP Solution",
+        "title": "ERP Solution",
+        "description": "<p>An integrated suite of business applications that dissolves departmental silos and seamlessly connects your sales, marketing, HR, support, finance, and operations.</p>"
+      },
+      {
+        "image": "/assets/img/services/mobile-app-dev.png",
+        "alt": "Mobile Apps Development",
+        "title": "Mobile Apps Development",
+        "description": "<p>Best Fast Affordable Custom Android iOS Mobile app Development in Jakarta. Capable of Native / Hybrid app (Java, Swift, Ionic, React Native) development.<br> <ul class='text-start'><li>iOS & Android</li><li>PlatformAPI</li><li>Development</li><li>UI UX Design</li></ul></p>"
+      },
+      {
+        "image": "/assets/img/services/digimar-seo.png",
+        "alt": "Digital Marketing and SEO",
+        "title": "Digital Marketing and SEO",
+        "description": "<p>Services provided include Web Design & Branding, Web Application Development, Ecommerce Development, Content Management Solutions, Mobile Application Development, Internet Marketing, Social Media Marketing, Search Engine Optimization.</p>"
+      },
+      {
+        "image": "/assets/img/services/mt-integrate.png",
+        "alt": "Metatrader Integration",
+        "title": "Metatrader Integration",
+        "description": "<p>The MetaTrader 4 broad functionality can be even wider! Application Program Interface, API allow you to build new functions into the platform, integrate it with other solutions and customize it for a variety of unique tasks.</p>"
+      },
+      {
+        "image": "/assets/img/services/mt-crm.png",
+        "alt": "Metatrader CRM",
+        "title": "Metatrader CRM",
+        "description": "<p>For example, by integrating the platform and the CRM system, you can receive a ready-made business solution providing an entirely new level of functionality. The interfaces allow you to pass any information about a trader to third-party applications.</p>"
+      },
+      {
+        "image": "/assets/img/services/web-app.png",
+        "alt": "Web and Application",
+        "title": "Web and Application",
+        "description": "<p>Smartin Teknologi Sistem also offer other services such as FinanceChart, Live Price and Website Development. These services are available either as a Stand-Alone or All-in-One fully hosted services on our servers.</p>"
       }
     ]
   },

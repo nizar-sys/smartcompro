@@ -257,7 +257,7 @@ const app = Vue.createApp({
       this.contact.message = "";
     },
     initSwiper() {
-      new Swiper(".swiper", {
+      new Swiper(".swiper-container", {
         // loop: true,
         pagination: {
           el: ".swiper-pagination",
