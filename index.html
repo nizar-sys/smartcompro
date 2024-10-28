@@ -74,6 +74,55 @@
     <script src="./assets/vendor/js/helpers.js"></script>
     <script src="./assets/vendor/js/template-customizer.js"></script>
     <script src="./assets/js/front-config.js"></script>
+    <style>
+      .whatsapp-btn {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+      }
+
+      .whatsapp-btn:hover {
+        background-color: #128c7e;
+        color: #fff;
+      }
+
+      .my-float {
+        margin-top: 16px;
+      }
+
+      .custom-overflow {
+        position: relative;
+        overflow: hidden;
+        display: flex; /* Gunakan flex untuk pengaturan tata letak */
+        justify-content: center; /* Pusatkan gambar secara horizontal */
+        align-items: center; /* Pusatkan gambar secara vertikal */
+        width: 100%;
+        height: 15vh; /* Tinggi untuk mobile */
+      }
+
+      @media (min-width: 768px) {
+        .custom-overflow {
+          height: 50vh; /* Tinggi untuk desktop */
+        }
+      }
+
+      .custom-overflow img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain; /* Pastikan gambar tidak terpotong */
+      }
+    </style>
   </head>
 
   <body>
@@ -102,7 +151,7 @@
             </button>
             <!-- Mobile menu toggle: End-->
             <a href="./" class="app-brand-link">
-              <span class="app-brand-logo demo" v-html="appLogo"></span>
+              <img :src="appLogo" alt="app logo" class="app-brand-logo demo" />
               <span class="app-brand-text demo menu-text fw-semibold ms-2 ps-1"
                 >{{ appName }}</span
               >
@@ -138,7 +187,18 @@
                 <a class="nav-link fw-medium" href="./#services">Services</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link fw-medium" href="./#portofolios"
+                  >Portofolios</a
+                >
+              </li>
+              <li class="nav-item">
                 <a class="nav-link fw-medium" href="./#landingFAQ">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-medium" href="./#aboutUs">About US</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link fw-medium" href="./#webTrade">Web Trading View</a>
               </li>
               <li class="nav-item">
                 <a
@@ -176,37 +236,25 @@
               <h3 class="text-primary hero-title fs-2">{{ hero.title }}</h3>
               <h2 class="h6 mb-8" v-html="hero.subtitle"></h2>
             </div>
+
             <!-- Swiper Container -->
-            <div class="swiper-container swiper-hero-carousel">
+            <div class="swiper-container swiper-hero-carousel custom-overflow">
               <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
+                <div
+                  class="swiper-slide"
+                  v-for="(slider, index) in hero.sliders"
+                  :key="index"
+                >
                   <div class="position-relative hero-animation-img">
                     <a href="javascript:void(0);">
                       <div class="hero-dashboard-img text-center">
                         <img
-                          src="./assets/img/banners/slide3.jpg"
-                          alt="hero dashboard"
+                          :src="slider.image"
+                          :alt="slider.alt"
                           class="animation-img"
                           data-speed="2"
-                          data-app-light-img="banners/slide3.jpg"
-                          data-app-dark-img="banners/slide3.jpg"
-                        />
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="position-relative hero-animation-img">
-                    <a href="javascript:void(0);">
-                      <div class="hero-dashboard-img text-center">
-                        <img
-                          src="./assets/img/banners/slide2.jpg"
-                          alt="hero dashboard"
-                          class="animation-img"
-                          data-speed="2"
-                          data-app-light-img="banners/slide2.jpg"
-                          data-app-dark-img="banners/slide2.jpg"
+                          :data-app-light-img="slider.lightImg"
+                          :data-app-dark-img="slider.darkImg"
                         />
                       </div>
                     </a>
@@ -241,13 +289,16 @@
               <div
                 v-for="(item, index) in service.items"
                 :key="index"
-                class="col-lg-4 col-sm-6 text-center features-icon-box"
+                class="col-lg-3 col-sm-6 text-center features-icon-box"
               >
-                <div class="features-icon mb-4">
-                  <img :src="item.image" :alt="item.alt" />
+                <div class="features-icon mb-4 border-0">
+                  <img :src="item.image" :alt="item.alt" class="img-fluid" />
                 </div>
                 <h5 class="mb-2">{{ item.title }}</h5>
-                <p class="features-icon-description">{{ item.description }}</p>
+                <p
+                  class="features-icon-description"
+                  v-html="item.description"
+                ></p>
               </div>
             </div>
           </div>
@@ -255,7 +306,7 @@
         <!-- Useful features: End -->
 
         <!-- Real customers reviews: Start -->
-        <section id="landingReviews" class="section-py bg-body landing-reviews">
+        <section id="portofolios" class="section-py bg-body landing-reviews">
           <div class="container">
             <h6
               class="text-center d-flex justify-content-center align-items-center mb-6"
@@ -265,31 +316,35 @@
                 alt="section title icon"
                 class="me-3"
               />
-              <span class="text-uppercase">{{ client.title }}</span>
+              <span class="text-uppercase">{{ portofolio.title }}</span>
             </h6>
-            <h5 class="text-center mb-2" v-html="client.subtitle"></h5>
+            <h5 class="text-center mb-2" v-html="portofolio.subtitle"></h5>
             <p class="text-center fw-medium mb-4 mb-md-12">
-              {{ client.description }}
+              {{ portofolio.description }}
             </p>
           </div>
-          <!-- <div class="swiper-reviews-carousel overflow-hidden mb-12 pt-4">
+          <div class="swiper-reviews-carousel overflow-hidden mb-12 pt-4">
             <div class="swiper" id="swiper-reviews">
               <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div
+                  class="swiper-slide"
+                  v-for="(item, index) in portofolio.items"
+                  :key="index"
+                >
                   <div class="card h-100">
                     <div
                       class="card-body text-body d-flex flex-column justify-content-between text-center p-8"
                     >
                       <div class="mb-4">
                         <img
-                          :src="client.items[0].image"
-                          :alt="client.items[0].alt"
-                          class="client-logo img-fluid"
+                          :src="item.image"
+                          :alt="item.alt"
+                          class="portofolio-logo img-fluid"
                         />
                       </div>
-                      <h6>{{ client.items.description }}</h6>
+                      <h6>{{ item.description }}</h6>
                       <div>
-                        <h6 class="mb-0">{{ client.items.name }}</h6>
+                        <h6 class="mb-0">{{ item.name }}</h6>
                       </div>
                     </div>
                   </div>
@@ -298,23 +353,6 @@
               <div class="swiper-pagination"></div>
             </div>
           </div>
-          <div class="container">
-            <div class="swiper-logo-carousel pt-lg-4 mt-12">
-              <div class="swiper" id="swiper-clients-logos">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide">
-                    <img
-                      :src="client.items[0].image"
-                      :alt="client.items[0].alt"
-                      class="client-logo"
-                      :data-app-light-img="client.items.image"
-                      :data-app-dark-img="client.items.image"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
         </section>
         <!-- Real customers reviews: End -->
 
@@ -388,10 +426,11 @@
                     <h2 class="accordion-header" :id="'head-' + index">
                       <button
                         type="button"
-                        class="accordion-button collapsed"
+                        class="accordion-button"
+                        :class="{'collapsed': index !== 1}"
                         :data-bs-toggle="'collapse'"
                         :data-bs-target="'#accordion' + index"
-                        :aria-expanded="index === 0 ? 'true' : 'false'"
+                        :aria-expanded="index === 1 ? 'true' : 'false'"
                         :aria-controls="'accordion' + index"
                       >
                         {{ item.question }}
@@ -401,6 +440,7 @@
                     <div
                       :id="'accordion' + index"
                       class="accordion-collapse collapse"
+                      :class="{ show: index === 1 }"
                       data-bs-parent="#accordionFront"
                       :aria-labelledby="'head-' + index"
                     >
@@ -416,7 +456,7 @@
 
         <!-- CTA: Start -->
         <section
-          id="landingCTA"
+          id="aboutUs"
           class="section-py landing-cta p-lg-0 pb-0 position-relative"
         >
           <img
@@ -442,6 +482,96 @@
           </div>
         </section>
         <!-- CTA: End -->
+
+        <!-- FAQ: Start -->
+        <section id="webTrade" class="section-py bg-body landing-faq">
+          <div class="container bg-icon-right">
+            <img
+              src="./assets/img/front-pages/icons/bg-right-icon-light.png"
+              alt="section icon"
+              class="position-absolute top-0 end-0"
+              data-speed="1"
+              data-app-light-img="front-pages/icons/bg-right-icon-light.png"
+              data-app-dark-img="front-pages/icons/bg-right-icon-dark.png"
+            />
+            <h6
+              class="text-center d-flex justify-content-center align-items-center mb-6"
+            >
+              <img
+                src="./assets/img/front-pages/icons/section-tilte-icon.png"
+                alt="section title icon"
+                class="me-3"
+              />
+              <span class="text-uppercase">{{ webtrade.title }}</span>
+            </h6>
+            <h5 class="text-center mb-2" v-html="webtrade.subtitle"></h5>
+            <p class="text-center fw-medium mb-4 mb-md-12 pb-4">
+              {{webtrade.description}}
+            </p>
+            <div class="row gy-5">
+              <div class="col-lg-12">
+                <div
+                  class="tradingview-widget-container"
+                  style="width: 100%; height: 550px"
+                >
+                  <iframe
+                    allowtransparency="true"
+                    frameborder="0"
+                    src="https://www.tradingview-widget.com/embed-widget/screener/?locale=en#%7B%22width%22%3A%22100%25%22%2C%22height%22%3A550%2C%22defaultColumn%22%3A%22overview%22%2C%22defaultScreen%22%3A%22general%22%2C%22market%22%3A%22forex%22%2C%22showToolbar%22%3Atrue%2C%22colorTheme%22%3A%22light%22%2C%22enableScrolling%22%3Atrue%2C%22utm_source%22%3A%22smartinsistem.com%22%2C%22utm_medium%22%3A%22widget_new%22%2C%22utm_campaign%22%3A%22forexscreener%22%2C%22page-uri%22%3A%22smartinsistem.com%2F%22%7D"
+                    title="screener TradingView widget"
+                    lang="en"
+                    style="
+                      user-select: none;
+                      box-sizing: border-box;
+                      display: block;
+                      height: calc(100% - 32px);
+                      width: 100%;
+                    "
+                  ></iframe>
+
+                  <style>
+                    .tradingview-widget-copyright {
+                      font-size: 13px !important;
+                      line-height: 32px !important;
+                      text-align: center !important;
+                      vertical-align: middle !important;
+                      /* @mixin sf-pro-display-font; */
+                      font-family: -apple-system, BlinkMacSystemFont,
+                        "Trebuchet MS", Roboto, Ubuntu, sans-serif !important;
+                      color: #b2b5be !important;
+                    }
+
+                    .tradingview-widget-copyright .blue-text {
+                      color: #2962ff !important;
+                    }
+
+                    .tradingview-widget-copyright a {
+                      text-decoration: none !important;
+                      color: #b2b5be !important;
+                    }
+
+                    .tradingview-widget-copyright a:visited {
+                      color: #b2b5be !important;
+                    }
+
+                    .tradingview-widget-copyright a:hover .blue-text {
+                      color: #1e53e5 !important;
+                    }
+
+                    .tradingview-widget-copyright a:active .blue-text {
+                      color: #1848cc !important;
+                    }
+
+                    .tradingview-widget-copyright a:visited .blue-text {
+                      color: #2962ff !important;
+                    }
+                  </style>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- FAQ: End -->
 
         <!-- Contact Us: Start -->
         <section id="landingContact" class="section-py bg-body landing-contact">
@@ -565,40 +695,44 @@
             <div class="row gx-0 gy-7 gx-sm-6 gx-lg-12">
               <div class="col-lg-5">
                 <a href="./" class="app-brand-link mb-6">
-                  <span class="app-brand-logo demo me-2" v-html="appLogo"></span>
+                  <img
+                    :src="appLogo"
+                    alt="app logo"
+                    class="app-brand-logo demo"
+                  />
+
                   <span class="app-brand-text demo footer-link fw-semibold ms-1"
                     >{{ appName }}</span
                   >
                 </a>
-                <p class="footer-text footer-logo-description mb-6">
-                  {{footer.description}}
-                </p>
+                <div
+                  class="footer-text footer-logo-description mb-6"
+                  v-html="footer.description"
+                ></div>
               </div>
               <div class="col-lg-2 col-md-4 col-sm-6">
                 <h6 class="footer-title mb-4 mb-lg-6">{{appName}}</h6>
                 <ul class="list-unstyled mb-0">
                   <li class="mb-4">
-                    <a href="./#landingHero" target="_blank" class="footer-link"
-                      >Home</a
-                    >
+                    <a href="#landingHero" class="footer-link">Home</a>
                   </li>
                   <li class="mb-4">
-                    <a href="./#services" target="_blank" class="footer-link"
-                      >Services</a
-                    >
+                    <a href="#services" class="footer-link">Services</a>
                   </li>
                   <li class="mb-4">
-                    <a href="./#landingFAQ" target="_blank" class="footer-link"
-                      >FAQ</a
-                    >
+                    <a href="#portofolios" class="footer-link">Portofolios</a>
                   </li>
                   <li class="mb-4">
-                    <a
-                      href="./#landingContact"
-                      target="_blank"
-                      class="footer-link"
-                      >Contact us</a
-                    >
+                    <a href="#landingFAQ" class="footer-link">FAQ</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#aboutUs" class="footer-link">About Us</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#webTrade" class="footer-link">Web Trading View</a>
+                  </li>
+                  <li class="mb-4">
+                    <a href="#landingContact" class="footer-link">Contact us</a>
                   </li>
                 </ul>
               </div>
@@ -660,13 +794,7 @@
             class="container d-flex flex-wrap justify-content-between flex-md-row flex-column text-center text-md-start"
           >
             <div class="mb-2 mb-md-0">
-              <span class="footer-text">{{footer.copyright.text}}</span>,
-              <a
-                href="./"
-                target="_blank"
-                class="footer-link fw-medium footer-theme-link"
-                >{{appName}}</a
-              >
+              <span class="footer-text" v-html="footer.copyright.text"></span>
             </div>
             <div>
               <div>
@@ -685,6 +813,18 @@
         </div>
       </footer>
       <!-- Footer: End -->
+
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+      />
+      <a
+        href="https://api.whatsapp.com/send/?phone=6281385764722&text=Halo%21+Ada+yang+bisa+kami+bantu%3F&type=phone_number&app_absent=0"
+        class="whatsapp-btn"
+        target="_blank"
+      >
+        <i class="fa fa-whatsapp my-float"></i>
+      </a>
     </div>
 
     <!-- Core JS -->
@@ -703,8 +843,6 @@
     <script src="./assets/js/front-main.js"></script>
 
     <!-- Page JS -->
-    <script src="./assets/js/front-page-landing.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="./assets/js/script.js"></script>

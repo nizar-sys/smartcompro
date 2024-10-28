@@ -1,12 +1,12 @@
 {
   "meta": {
-    "title": "Smartin Teknologi Sistem",
+    "title": "PT. Smartin Teknologi Sistem - Personal IT Consultant",
     "description": "Smartin Technology System is a software development company that provides software solutions to businesses and individuals.",
-    "favicon": "/assets/img/favicon/favicon.ico"
+    "favicon": "/assets/img/favicon/Smartin_Logo_favico.png"
   },
 
-  "appName": "Smartin Teknologi Sistem",
-  "appLogo": "/assets/appLogo.svg",
+  "appName": "PT. Smartin Teknologi Sistem",
+  "appLogo": "/assets/img/logo/Smartin_Logo_fix-1.png",
 
   "hero": {
     "backgrounds": {
@@ -14,9 +14,15 @@
       "light2": "front-pages/backgrounds/hero-bg-light.png",
       "dark": "front-pages/backgrounds/hero-bg-dark.png"
     },
-    "title": "Smartin Teknologi Sistem",
-    "subtitle": "No coding required to make customisations.<br />The live customiser has everything your marketing need.",
+    "title": "",
+    "subtitle": "",
     "sliders": [
+      {
+        "image": "/assets/img/banners/slide1.jpg",
+        "alt": "hero dashboard",
+        "lightImg": "banners/slide1.jpg",
+        "darkImg": "banners/slide1.jpg"
+      },
       {
         "image": "/assets/img/banners/slide3.jpg",
         "alt": "hero dashboard",
@@ -35,33 +41,87 @@
   "service": {
     "title": "Our Services",
     "subtitle": "<span class='display-5 fs-4 fw-bold'>Everything you need</span> to start your next project",
-    "description": "Not just a set of tools, the package includes ready-to-deploy conceptual application.",
+    "description": "",
     "items": [
       {
-        "image": "/assets/img/front-pages/icons/laptop-charging.png",
-        "alt": "laptop charging",
-        "title": "Web Development",
-        "description": "Code structure that all developers will easily understand and fall in love with."
+        "image": "/assets/img/services/24-7-mt-support.png",
+        "alt": "24/7 Metatrader Support",
+        "title": "24/7 Metatrader Support",
+        "description": "<p><ul class='text-start'><li>MT4 Installations</li><li>MT4 Administration & Configuration</li><li>MT4 Data Migration</li><li>MT4 Servers Support</li><li>Data Feeds Setup and Configuration</li><li>Monitoring</li><li>24/5 technical Support</li><li>English Support</li></ul></p>"
       },
       {
-        "image": "/assets/img/front-pages/icons/laptop-charging.png",
-        "alt": "laptop charging",
-        "title": "Web Development",
-        "description": "Code structure that all developers will easily understand and fall in love with."
+        "image": "/assets/img/services/news-research.png",
+        "alt": "News Research",
+        "title": "News Research",
+        "description": "<p class='text-start'>Learn how global markets work, how they are interrelated, and how individual companies and sectors can influence their movements.</p>"
+      },
+      {
+        "image": "/assets/img/services/erp-solution.png",
+        "alt": "ERP Solution",
+        "title": "ERP Solution",
+        "description": "<p class='text-start'>An integrated suite of business applications that dissolves departmental silos and seamlessly connects your sales, marketing, HR, support, finance, and operations.</p>"
+      },
+      {
+        "image": "/assets/img/services/mobile-app-dev.png",
+        "alt": "Mobile Apps Development",
+        "title": "Mobile Apps Development",
+        "description": "<p class='text-start'>Best Fast Affordable Custom Android iOS Mobile app Development in Jakarta. Capable of Native / Hybrid app (Java, Swift, Ionic, React Native) development.<br> <ul class='text-start'><li>iOS & Android</li><li>PlatformAPI</li><li>Development</li><li>UI UX Design</li></ul></p>"
+      },
+      {
+        "image": "/assets/img/services/digimar-seo.png",
+        "alt": "Digital Marketing and SEO",
+        "title": "Digital Marketing and SEO",
+        "description": "<p class='text-start'>Services provided include Web Design & Branding, Web Application Development, Ecommerce Development, Content Management Solutions, Mobile Application Development, Internet Marketing, Social Media Marketing, Search Engine Optimization.</p>"
+      },
+      {
+        "image": "/assets/img/services/mt-integrate.png",
+        "alt": "Metatrader Integration",
+        "title": "Metatrader Integration",
+        "description": "<p class='text-start'>The MetaTrader 4 broad functionality can be even wider! Application Program Interface, API allow you to build new functions into the platform, integrate it with other solutions and customize it for a variety of unique tasks.</p>"
+      },
+      {
+        "image": "/assets/img/services/mt-crm.png",
+        "alt": "Metatrader CRM",
+        "title": "Metatrader CRM",
+        "description": "<p class='text-start'>For example, by integrating the platform and the CRM system, you can receive a ready-made business solution providing an entirely new level of functionality. The interfaces allow you to pass any information about a trader to third-party applications.</p>"
+      },
+      {
+        "image": "/assets/img/services/web-app.png",
+        "alt": "Web and Application",
+        "title": "Web and Application",
+        "description": "<p class='text-start'>PT. Smartin Teknologi Sistem also offer other services such as FinanceChart, Live Price and Website Development. These services are available either as a Stand-Alone or All-in-One fully hosted services on our servers.</p>"
       }
     ]
   },
 
-  "client": {
-    "title": "Our Clients",
-    "subtitle": "<span class='display-5 fs-4 fw-bold'>Success stories</span> from clients",
-    "description": "We have worked with some awesome clients",
+  "portofolio": {
+    "title": "Our Portofolios",
+    "subtitle": "",
+    "description": "List your sleek works with the help of Suffice",
     "items": [
       {
-        "image": "/assets/img/front-pages/branding/logo-4.png",
-        "alt": "Client Logo",
-        "description": "We have worked with some awesome clients",
-        "name": "Client Name"
+        "image": "/assets/img/portofolios/cabinet-system-forex.png",
+        "alt": "Cabinet System Forex",
+        "description": "",
+        "name": "Cabinet System Forex"
+      },
+      {
+        "image": "/assets/img/portofolios/global-plafon-pvc.png",
+        "alt": "Global Plafon PVC",
+        "description": "",
+        "name": "Global Plafon PVC"
+      },
+      {
+        "image": "/assets/img/portofolios/crm-mydesk.png",
+        "alt": "CRM MyDesk",
+        "description": "",
+        "name": "CRM MyDesk"
+      },
+      {
+        "image": "/assets/img/portofolios/unlimited-trade-commission-system.png",
+        "alt": "Unlimited Trade Commission System",
+        "description": "",
+        "name": "Unlimited Trade Commission System"
       }
     ]
   },
@@ -69,21 +129,33 @@
   "statistics": [
     {
       "color": "primary",
-      "icon": "ri-layout-line",
-      "data": "100",
-      "description": "Projects Completed"
+      "icon": "ri-time-line",
+      "data": "24/7",
+      "description": "Work Hours"
+    },
+    {
+      "color": "success",
+      "icon": "ri-group-line",
+      "data": "63",
+      "description": "Total Clients"
+    },
+    {
+      "color": "info",
+      "icon": "ri-folder-line",
+      "data": "100+",
+      "description": "Total Projects"
     },
     {
       "color": "warning",
-      "icon": "ri-layout-line",
-      "data": "100",
-      "description": "Projects Completed"
+      "icon": "ri-trophy-line",
+      "data": "13",
+      "description": "Total Awards"
     }
   ],
 
   "faq": {
     "title": "Frequently Asked Questions",
-    "subtitle": "Frequently asked<span class='display-5 fs-4 fw-bold'> questions</span>",
+    "subtitle": "",
     "description": "Browse through these FAQs to find answers to commonly asked questions.",
     "image": "/assets/img/front-pages/landing-page/sitting-girl-with-laptop.png",
     "alt": "sitting girl with laptop",
@@ -91,15 +163,33 @@
       {
         "question": "What is Smartin Technology System?",
         "answer": "Smartin Technology System is a software development company that provides software solutions to businesses and individuals."
+      },
+      {
+        "question": "What services does Smartin Technology System offer?",
+        "answer": "We offer a range of services including software development, system integration, custom software solutions, and technical support for trading platforms such as MT4 and MT5."
+      },
+      {
+        "question": "What is the difference between MT4 and MT5?",
+        "answer": "MT4 is a trading platform focused on forex trading with a simpler structure, while MT5 offers multi-asset trading (stocks, commodities, forex) with more advanced features, faster processing, and enhanced trading tools."
+      },
+      {
+        "question": "Is support available 24/7?",
+        "answer": "Yes, Smartin Technology System provides 24/7 support for critical issues, ensuring that clients receive timely assistance whenever they need it."
       }
     ]
   },
 
   "about": {
     "title": "About Us",
-    "description": "Smartin Technology System is a software development company that provides software solutions to businesses and individuals.",
-    "image": "/assets/img/front-pages/landing-page/cta-dashboard.png",
+    "description": "<p><b>Who We Are</b> <br><br> PT. Smartin Teknologi Sistem is an innovative leading provider of financial solutions. We provide services and trading platforms to institutional and retail brokerage firms in the foreign exchange, commodities, forex and physical market. <br><br> We aim to provide the financial, brokerage and banking industries with cutting edge charting and front-end solutions.<br><br> Our developers are highly qualified and only apply the latest technologies. We cover the entire spectrum of charting software development including the handling of large real-time financial databases. <br><br> This high quality feedback on the current and future concerns of our end users allows us to continuously improve our technology solutions. <br><br> Being so close to the market, our support IT Team are able to respond quickly to your requirements and needs. <br><br> One of the many software solutions Saint Technologies has created that have redefined the trading industry. We have vision to provide our customers with innovative web-based charting solutions that give them a competitive advantage.</p>",
+    "image": "/assets/img/about/about1.png",
     "alt": "cta dashboard"
+  },
+
+  "webtrade": {
+    "title": "Web Trading Vie",
+    "subtitle": "",
+    "description": "Overview of Web Trading View"
   },
 
   "contact_us": {
@@ -109,17 +199,25 @@
   },
 
   "footer": {
-    "description": "Most Powerful & Comprehensive 🤩 React NextJS Admin Template with Elegant Material Design & Unique Layouts.",
+    "description": "<p class='text-muted'><b>PT. Smartin Teknologi Sistem</b> is a IT consultant based in Jakarta <br><br> <b>Address:</b> <br> ITS Tower LT 29 - Nifarro Park, Jl. Raya Pasar Minggu No.18, RT.1/RW.1, Pejaten Timur, Ps. Minggu, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12510</p>",
     "url_appstore": "javascript:void(0);",
     "url_playstore": "javascript:void(0);",
     "copyright": {
-      "text": "© 2021 Smartin Technology System",
+      "text": "Copyright 2024 <a href='/' class='text-muted font-weight-bold'>PT. Smartin Teknologi Sistem</a>. All rights reserved.",
       "url": "https://smartin-technology-system.com"
     },
     "socials": [
       {
+        "icon": "ri-whatsapp-fill",
+        "url": "https://api.whatsapp.com/send/?phone=6281385764722&text=Halo%21+Ada+yang+bisa+kami+bantu%3F&type=phone_number&app_absent=0"
+      },
+      {
+        "icon": "ri-instagram-fill",
+        "url": "javascript:void(0);"
+      },
+      {
         "icon": "ri-facebook-fill",
-        "url": "https://www.facebook.com"
+        "url": "javascript:void(0);"
       }
     ]
   }

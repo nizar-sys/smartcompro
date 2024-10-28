@@ -54,7 +54,7 @@ const app = Vue.createApp({
         ],
       },
 
-      client: {
+      portofolio: {
         title: "",
         subtitle: "",
         description: "",
@@ -98,6 +98,12 @@ const app = Vue.createApp({
         alt: "",
       },
 
+      webtrade: {
+        title: "",
+        subtitle: "",
+        description: "",
+      },
+
       contact_us: {
         title: "",
         subtitle: "",
@@ -138,7 +144,7 @@ const app = Vue.createApp({
         };
 
         this.appName = data.appName || "";
-        this.appLogoPath = data.appLogo || "";
+        this.appLogo = data.appLogo || "";
 
         this.hero = {
           backgrounds: {
@@ -168,11 +174,11 @@ const app = Vue.createApp({
           })),
         };
 
-        this.client = {
-          title: data.client.title || "",
-          subtitle: data.client.subtitle || "",
-          description: data.client.description || "",
-          items: data.client.items.map((item) => ({
+        this.portofolio = {
+          title: data.portofolio.title || "",
+          subtitle: data.portofolio.subtitle || "",
+          description: data.portofolio.description || "",
+          items: data.portofolio.items.map((item) => ({
             image: item.image || "",
             alt: item.alt || "",
             description: item.description || "",
@@ -206,6 +212,12 @@ const app = Vue.createApp({
           alt: data.about.alt || "",
         };
 
+        this.webtrade = {
+          title: data.webtrade.title || "",
+          subtitle: data.webtrade.subtitle || "",
+          description: data.webtrade.description || "",
+        };
+
         this.contact_us = {
           title: data.contact_us.title || "",
           subtitle: data.contact_us.subtitle || "",
@@ -231,20 +243,6 @@ const app = Vue.createApp({
         document.querySelector("meta[name='description']").content =
           this.meta.description;
 
-        if (this.appLogoPath) {
-          try {
-            const logoSvg = await fetch(this.appLogoPath);
-            if (!logoSvg.ok) throw new Error("Failed to load SVG");
-
-            this.appLogo = await logoSvg.text(); // Mengambil konten SVG
-          } catch (error) {
-            console.error(error); // Menangani error jika fetch gagal
-            this.appLogo = ""; // Mengatur appLogo ke string kosong jika gagal
-          }
-        } else {
-          this.appLogo = ""; // Jika path tidak ada, pastikan appLogo tetap kosong
-        }
-
         this.initSwiper();
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -257,20 +255,57 @@ const app = Vue.createApp({
       this.contact.message = "";
     },
     initSwiper() {
-      new Swiper(".swiper", {
-        // loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        autoplay: {
-          delay: 3000,
-        },
-      });
+      // alert("Swiper initialized");
+      /**
+       * Main - Front Pages
+       */
+      "use strict";
+
+      (function () {
+        const swiperReviews = document.getElementById("swiper-reviews");
+
+        if (swiperReviews) {
+          new Swiper(swiperReviews, {
+            slidesPerView: 1,
+            spaceBetween: 5,
+            centeredSlides: true,
+            grabCursor: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            loop: false,
+            loopAdditionalSlides: 1,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            breakpoints: {
+              992: {
+                slidesPerView: 4,
+                spaceBetween: 24,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
+            },
+          });
+
+          new Swiper(".swiper-hero-carousel", {
+            loop: true,
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            speed: 1000,
+          });
+        }
+      })();
     },
   },
 });
